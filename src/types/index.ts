@@ -29,22 +29,7 @@ export interface Experience {
   type: "work" | "freelance";
 }
 
-export interface Education {
-  institution: string;
-  degree: string;
-  duration: string;
-  coursework: string[];
-  honors: string[];
-}
-
 export interface NavLink {
   label: string;
   href: string;
-}
-
-export interface ContactFormData {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
 }

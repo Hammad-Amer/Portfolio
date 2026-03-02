@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
@@ -9,15 +9,15 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-display",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Hammad Amer | AI/ML & Full-Stack Software Engineer",
+  title: "Hammad Amer | AI/ML & Full-Stack Developer",
   description:
-    "Portfolio of Hammad Amer — AI/ML and Full-Stack Software Engineer specializing in deep learning, computer vision, NLP, React, and Node.js. FAST NUCES '26.",
+    "Personal website of Hammad Amer — AI/ML and Full-Stack Software Engineer.",
   keywords: [
     "AI Engineer",
     "ML Engineer",
@@ -31,16 +31,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Hammad Amer" }],
   openGraph: {
-    title: "Hammad Amer | AI/ML & Full-Stack Software Engineer",
+    title: "Hammad Amer | AI/ML & Full-Stack Developer",
     description:
-      "Portfolio of Hammad Amer — AI/ML and Full-Stack Engineer specializing in deep learning, NLP, and modern web development.",
-    siteName: "Hammad Amer Portfolio",
+      "Welcome to the personal website of Hammad Amer, an AI/ML & Full-Stack Developer.",
+    siteName: "Hammad Amer",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hammad Amer | AI/ML & Full-Stack Software Engineer",
-    description: "Portfolio of Hammad Amer — AI/ML and Full-Stack Engineer.",
+    title: "Hammad Amer | AI/ML & Full-Stack Developer",
+    description: "Personal website of Hammad Amer, AI/ML & Full-Stack Developer.",
   },
   robots: { index: true, follow: true },
 };
@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         <Navbar />
         <main>{children}</main>
         <Footer />

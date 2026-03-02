@@ -12,6 +12,10 @@ interface ProjectEntry {
   image?: string;
 }
 
+interface ProjectsProps {
+  limit?: number;
+}
+
 const projects: ProjectEntry[] = [
   {
     title: "SpineScan",
@@ -68,7 +72,9 @@ const projects: ProjectEntry[] = [
   },
 ];
 
-export default function Projects() {
+export default function Projects({ limit }: ProjectsProps = {}) {
+  const displayedProjects = limit ? projects.slice(0, limit) : projects;
+
   return (
     <section id="projects" className="relative z-10 pb-16 w-full">
       {/* Side glows */}
@@ -82,9 +88,8 @@ export default function Projects() {
             Projects
           </p>
           <a
-            href="https://github.com/Hammad-Amer"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={limit ? "/projects" : "https://github.com/Hammad-Amer"}
+            {...(!limit && { target: "_blank", rel: "noopener noreferrer" })}
             className="text-sm text-neutral-400 hover:text-white transition-colors"
           >
             View More
@@ -92,7 +97,7 @@ export default function Projects() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {projects.map((project) => (
+          {displayedProjects.map((project) => (
             <div
               key={project.title}
               className="rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950/30"

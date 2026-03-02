@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       <Experience />
       <TechStack />
-      <Projects />
+      <Projects limit={3} />
     </div>
   );
 }
